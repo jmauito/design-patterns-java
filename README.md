@@ -29,3 +29,19 @@ Este ejemplo se desarrolló luego de analizar el siguiente vídeo del Máster en
 Madrid:
 https://youtu.be/PZ_fM3qCkc4?si=YzaJb1smXYVPG4ik&t=4518
 
+### Composite
+El objetivo es crear estructuras en árbol. En una estructura de árbol se tienen dos tipos de nodos: la hoja que tiene un 
+valor final y que ya no tiene hijos, y, el compuesto (yo le llamo rama) que tiene hijos. El problema aquí es que todos 
+son nodos, pero tienen diferentes responsabilidades.
+
+#### Caso de uso
+Se necesita crear una calculadora de expresiones aritméticas agrupadas por paréntesis, por ejemplo, una calculadora para 
+resolver: (((5+8)-3)*2)/4 = 5
+
+Se utiliza el patrón composite para crear una estructura en árbol en donde se puedan agrupar operaciones y los números a
+operar.
+
+#### Fuente de la información
+El ejemplo y la información sobre el patrón fueron obtenidos del siguiente vídeo del Máster en Ingeniería Web de la Universidad Politécnica de
+Madrid:
+https://youtu.be/6cMsvs_PkSI?si=romXcFU3WJoRFear 
