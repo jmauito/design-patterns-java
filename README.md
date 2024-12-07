@@ -72,4 +72,35 @@ builder como un propio elemento de la clase y su sintaxis para usarlo queda muy 
 
 #### Fuente de información
 El ejemplo y la información fueron obtenidos del siguiente vídeo del Máster en Ingeniería Web de la Universidad Politécnica
-de Madrid: https://youtu.be/mWxB7at5lzo?si=T4EFW8pTlfLb4aBa 
+de Madrid: https://youtu.be/mWxB7at5lzo?si=T4EFW8pTlfLb4aBa
+
+### Patrón Decorator
+Permite extender la lógica a una clase sin tocar la clase. Es una alternativa a la herencia, porque si tienes muchas 
+combinaciones, el árbol de herencia crece demasiado.
+
+Imagina que tienes tres entidades: X,Y,Z que se pueden combinar entre ellas. Una solución sería crear una clase abstracta 
+base y luego crearíamos las clases para cada entidad, a continuación deberíamos crear unas subclases con todas las 
+combinaciones posibles. En total unas once clases.
+
+Para estos casos, utilizamos el patrón decorador en donde, una clase A puede ser "envuelta" por una clase B, así la clase 
+B podría "decorar" las propiedades y métodos de la clase A agregando más funcionalidades. Si esta clase B, a su vez puede 
+ser "envuelta" por otra clase C, se pueden agregar más funcionalidades. En el ejemplo anterior, para obtener todas las 
+combinaciones posibles solo necesitaríamos cinco clases.
+
+#### Caso de uso
+Se necesita crear un sistema de venta de automóviles. A los automóviles se les puede agregar los extras que el comprador 
+pida. Al final, el sistema deberá mostrar el auto con la descripción de todos los extras agregados y el precio final.
+Los resultados esperados son los siguientes:
+
+- Solo el auto que cuesta 14000: Chevrolet Aveo Value: 14000.0
+- El auto con un GPS que cuesta 100: Chevrolet Aveo + GPS. Value: 14100.0
+- El auto con un GPS (valor: 100), un Radio (valor 300): Chevrolet Aveo + GPS + Radio with Bluetooth. Value: 14400.0
+- El auto con un GPS (100), Radio(300) y sistema EDS(500): Chevrolet Aveo + GPS + Radio with Bluetooth + EDS. Value: 14900.0
+
+Utilizaremos el patrón decorador para crear el auto base, utilizaremos un decorador para agregar los extras. Los objetos
+decoradores podrán agregar a su descripción, la descripción del componente que envuelven y sumar su valor con el valor de
+su componente. Así se obtendrá el resultado esperado.
+
+#### Fuente de información
+La información sobre el patrón y el ejemplo propuesto fue obtenido del siguiente vídeo del Máster en Ingeniería Web de la 
+Universidad Politécnica de Madrid: https://youtu.be/RlWT2rNDnUA?si=gHcDYvM-Rvr6Z2iJ&t=462
