@@ -104,3 +104,28 @@ su componente. Así se obtendrá el resultado esperado.
 #### Fuente de información
 La información sobre el patrón y el ejemplo propuesto fue obtenido del siguiente vídeo del Máster en Ingeniería Web de la 
 Universidad Politécnica de Madrid: https://youtu.be/RlWT2rNDnUA?si=gHcDYvM-Rvr6Z2iJ&t=462
+
+### Patrón State
+El objetivo es permitir que un objeto cambie su comportamiento cada vez que cambie su estado interno. El objeto cambia 
+según los estados. El cliente solo ve al contexto que es la clase pública. El cliente llama a los métodos, pero el comportamiento
+de los métodos cambia según el estado en el que se encuentra el objeto. ¡El polimorfismo en toda su expresión!
+
+#### Caso de uso
+Se busca implementar todos los estados de una conexión TCP y simular todos los cambios de estado que son posibles.
+Ejemplo: al crear una conexión, el estado es CLOSED, al ejecutar el método open, la conexión pasa al estado READY.
+Desde el estado READY podemos enviar mensajes, detener el flujo de mensajes, cerrar la conexión.
+
+Si desde el estado READY enviamos un mensaje, el estado cambiará a WAITING hasta que el mensaje sea entregado completamente,
+en este estado, podemos detener el envío de paquetes lo que haría que el objeto cambie su estado a STOPPED, desde el
+estado STOPPED, podemos iniciar nuevamente la comunicación lo que hará que el objeto vuelva al estado READY.
+
+Como vemos, hay muchas maneras diferentes de comportamiento del objeto, pero, este comportamiento depende del estado del mismo.
+
+Aquí es óptimo utilizar el patrón State, en donde crearemos una clase de Contexto que será visible por el cliente que tiene
+como propiedad una clase Estado que guarda el estado actual del objeto. Esta clase Contexto permitirá al cliente ejecutar 
+métodos, pero el método cambiará según el estado que se tenga.
+Los estados heredan de una clase abstracta que garantiza que todos los estados compartan los mismos métodos.
+
+#### Fuente de información
+La información y el ejemplo están disponibles en el siguiente vídeo del Máster de Ingeniería Web de la Universidad Politécnica
+de Madrid: https://www.youtube.com/watch?v=gYWnOskeED4 
