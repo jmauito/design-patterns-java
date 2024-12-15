@@ -129,3 +129,27 @@ Los estados heredan de una clase abstracta que garantiza que todos los estados c
 #### Fuente de información
 La información y el ejemplo están disponibles en el siguiente vídeo del Máster de Ingeniería Web de la Universidad Politécnica
 de Madrid: https://www.youtube.com/watch?v=gYWnOskeED4 
+
+### Patrón Facade
+El patrón fachada tiene como objetivo no exponer lógica compleja de los sistemas, sino, crear una interfaz única que 
+muestre solo las funciones necesarias para la aplicación a desarrollar. Es decir, si tenemos unos servicios muy complejos 
+que son necesarios para realizar una operación, podemos crear una fachada que solo utilice los métodos o realice las 
+operaciones que son necesarias dentro de nuestra aplicación.
+
+#### Caso de uso
+Se necesita integrar la lectura de unos archivos XML en la nueva aplicación. 
+
+Técnicamente, la solución es agregar una librería de terceros, para el ejemplo se utilizó JAXB. Pero esta librería tiene
+muchas más funcionalidades además de la lectura de un XML. Al necesitar únicamente la lectura del XML, se creó una clase 
+XMLReader que es la fachada de todo el conjunto de clases de JAXB. Además, se agregó un a excepción personalizada para 
+identificar los errores que provengan de la lectura del XML.
+
+Siempre se debe utilizar una fachada cuando se utiliza una librería de terceros porque solo se utilizan ciertas funcionalidades
+de estas librerías y no todas. Al crear nuestra fachada, el análisis de la librería se la realizará una sola vez y las
+implementaciones de la misma quedarán disponibles en métodos que estén alineados al dominio propio de la aplicación. 
+Además, gracias a la fachada la librería puede ser reemplazada más fácilmente que si la utilizáramos directamente en 
+nuestro código.
+
+#### Fuente de información
+La información analizada está disponible en el siguiente vídeo del Máster de Ingeniería Web de la Universidad Politécnica
+de Madrid: https://youtu.be/iV2nYhUi9cQ?si=FlokZKjzVEYBHzCa&t=555 
