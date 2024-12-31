@@ -152,4 +152,19 @@ nuestro código.
 
 #### Fuente de información
 La información analizada está disponible en el siguiente vídeo del Máster de Ingeniería Web de la Universidad Politécnica
-de Madrid: https://youtu.be/iV2nYhUi9cQ?si=FlokZKjzVEYBHzCa&t=555 
+de Madrid: https://youtu.be/iV2nYhUi9cQ?si=FlokZKjzVEYBHzCa&t=555
+
+### Patrón Abstract Factory
+Su objetivo es crear una fábrica de objetos agrupados que se relacionan de alguna manera.
+
+#### Caso de uso
+En un banco se quiere crear tres tipos de cuenta, cada uno con su tasa de interés,
+su tarjeta de débito con saldo y una tarjeta de crédito con su saldo y su monto máximo.
+Para este caso se creará una fábrica para cada tipo de paquetes de cuenta y con ellos
+crearemos los tres objetos, uno para la cuenta, otro para la tarjeta de débito y otro 
+para la tarjeta de crédito.
+
+#### Fuente de información
+Tanto la información como el ejemplo se lo tomó del siguiente vídeo del Máster en Ingeniería
+Web de la Universidad de Madrid: https://www.youtube.com/watch?v=iV2nYhUi9cQ&t=888s 
+
